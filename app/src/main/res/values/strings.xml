@@ -3,4 +3,6 @@
     <string name="edit_note">Edit Note</string>
     <string name="title_hint">Title</string>
     <string name="note_detail_hint">Type something...</string>
+    <string name="search_notes">Search notes</string>
+    <string name="add_new_note">Add new note</string>
 </resources>
