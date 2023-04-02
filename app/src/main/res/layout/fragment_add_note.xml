@@ -59,7 +59,6 @@
                     android:id="@+id/note_detail_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:background="@null"
                     android:fontFamily="@font/roboto_regular"
                     android:hint="@string/note_detail_hint"

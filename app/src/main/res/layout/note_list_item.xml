@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="24sp"
+            android:textSize="20sp"
             tools:text="Beautiful weather app UI concepts we wish existed" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_regular"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:text="Mar 18, 2020" />
 
     </LinearLayout>

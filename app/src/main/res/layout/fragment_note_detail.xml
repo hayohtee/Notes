@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:textColor="?attr/colorOnPrimary"
-                android:textSize="32sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 tools:text="Beautiful weather app UI concepts" />
 
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="May 21, 2020" />
 
@@ -59,8 +59,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="?attr/colorOnPrimary"
-                android:textSize="24sp"
-                android:textStyle="bold"
+                android:textSize="20sp"
                 tools:text="I would have thought there could be so many" />
 
         </LinearLayout>
