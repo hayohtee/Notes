@@ -8,6 +8,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+        android:backgroundTint="?attr/colorPrimary"
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
