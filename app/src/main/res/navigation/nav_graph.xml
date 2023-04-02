@@ -8,22 +8,22 @@
     <fragment
         android:id="@+id/noteListFragment"
         android:name="com.hayohtee.notes.ui.NoteListFragment"
-        android:label="fragment_note_list"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_note_list" >
         <action
-            android:id="@+id/action_noteListFragment_to_noteDetailFragment"
+            android:id="@+id/showNoteDetail"
             app:destination="@id/noteDetailFragment" />
         <action
-            android:id="@+id/action_noteListFragment_to_addNoteFragment"
+            android:id="@+id/showAddNote"
             app:destination="@id/addNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/noteDetailFragment"
         android:name="com.hayohtee.notes.ui.NoteDetailFragment"
-        android:label="fragment_note_detail"
+        android:label=""
         tools:layout="@layout/fragment_note_detail" >
         <action
-            android:id="@+id/action_noteDetailFragment_to_editNoteFragment2"
+            android:id="@+id/toEditNote"
             app:destination="@id/editNoteFragment" />
         <argument
             android:name="noteId"
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.hayohtee.notes.ui.EditNoteFragment"
-        android:label="fragment_edit_note"
+        android:label=""
         tools:layout="@layout/fragment_edit_note" >
         <argument
             android:name="noteId"
@@ -41,6 +41,6 @@
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.hayohtee.notes.ui.AddNoteFragment"
-        android:label="fragment_add_note"
+        android:label=""
         tools:layout="@layout/fragment_add_note" />
 </navigation>
