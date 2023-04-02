@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.hayohtee.notes.R
 import com.hayohtee.notes.data.model.Note
 import com.hayohtee.notes.databinding.NoteListItemBinding
+import com.hayohtee.notes.util.Util
 
 class NoteListAdapter(private val onItemClick: (noteId: Long) -> Unit) :
     ListAdapter<Note, NoteViewHolder>(NoteDiffItemCallback()) {
@@ -31,7 +32,7 @@ class NoteViewHolder(private val binding: NoteListItemBinding) :
     fun bind(note: Note, position: Int, onItemClick: (noteId: Long) -> Unit) {
         binding.apply {
             noteTitle.text = note.title
-            noteDate.text = note.date.toString()
+            noteDate.text = Util.dateToString(note.date)
         }
         binding.root.setOnClickListener {
             onItemClick(note.id)
