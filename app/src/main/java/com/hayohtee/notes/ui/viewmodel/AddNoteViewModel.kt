@@ -4,29 +4,17 @@ import androidx.lifecycle.ViewModel
 import com.hayohtee.notes.data.NoteRepository
 import com.hayohtee.notes.data.model.Note
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
+import java.util.*
 
 class AddNoteViewModel : ViewModel() {
     private val repository: NoteRepository = NoteRepository.getInstance()
-    private val _note: MutableStateFlow<Note> = MutableStateFlow(Note())
 
-    val note: StateFlow<Note> = _note.asStateFlow()
+    val title = MutableStateFlow("")
+    val detail = MutableStateFlow("")
 
     override fun onCleared() {
         super.onCleared()
-        note.value.let {
-            if (it.title.isNotEmpty()) {
-                repository.addNote(it)
-            }
-        }
+        val note = Note(title = title.value, note = detail.value, date = Date())
+        repository.addNote(note)
     }
-
-    fun updateNote(onUpdate: (Note) -> Note) {
-        _note.update { oldNote ->
-            onUpdate(oldNote)
-        }
-    }
-
 }
