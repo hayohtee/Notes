@@ -18,6 +18,7 @@ import com.hayohtee.notes.R
 import com.hayohtee.notes.databinding.FragmentNoteDetailBinding
 import com.hayohtee.notes.ui.viewmodel.NoteDetailViewModel
 import com.hayohtee.notes.ui.viewmodel.NoteDetailViewModelFactory
+import com.hayohtee.notes.util.Util
 import kotlinx.coroutines.launch
 
 class NoteDetailFragment : Fragment() {
@@ -53,7 +54,7 @@ class NoteDetailFragment : Fragment() {
                 binding.apply {
                     noteTitle.text = note.title
                     noteDetail.text = note.note
-                    noteDate.text = note.date.toString()
+                    noteDate.text = Util.dateToRelativeTimeString(note.date)
                 }
             }
         }
