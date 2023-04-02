@@ -18,7 +18,6 @@ import com.hayohtee.notes.R
 import com.hayohtee.notes.databinding.FragmentNoteDetailBinding
 import com.hayohtee.notes.ui.viewmodel.NoteDetailViewModel
 import com.hayohtee.notes.ui.viewmodel.NoteDetailViewModelFactory
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class NoteDetailFragment : Fragment() {
@@ -49,7 +48,7 @@ class NoteDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.note.collect { note ->
                 binding.apply {
                     noteTitle.text = note.title
