@@ -52,7 +52,7 @@ class NoteViewHolder(private val binding: NoteListItemBinding) :
     private fun setSpan(title: String) {
         val layoutParams = StaggeredGridLayoutManager.LayoutParams(binding.root.layoutParams)
 
-        if (title.length >= 45) {
+        if (title.length > 50) {
             layoutParams.isFullSpan = true
             binding.noteDate.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
         }
