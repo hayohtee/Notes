@@ -14,7 +14,16 @@ class AddNoteViewModel : ViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        val note = Note(title = title.value, note = detail.value, date = Date())
-        repository.addNote(note)
+        addNote()
+    }
+
+    private fun addNote() {
+        if (title.value.isNotEmpty() || detail.value.isNotEmpty()) {
+            val note = Note(
+                title = title.value,
+                note = detail.value, date = Date()
+            )
+            repository.addNote(note)
+        }
     }
 }
