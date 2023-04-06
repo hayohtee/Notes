@@ -22,6 +22,29 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
+    <ImageView
+        android:id="@+id/default_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/empty_note_drawable_description"
+        android:src="@drawable/empty_note" />
+
+    <TextView
+        android:id="@+id/default_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchorGravity="bottom|center"
+        android:textColor="?attr/colorOnPrimary"
+        android:translationY="16dp"
+        android:layout_gravity="bottom|center"
+        app:layout_anchor="@id/default_imageView"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/no_data"
+        android:textSize="30sp" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -29,7 +52,8 @@
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:spanCount="2"
-        tools:listitem="@layout/note_list_item" />
+        tools:listitem="@layout/note_list_item"
+        tools:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
