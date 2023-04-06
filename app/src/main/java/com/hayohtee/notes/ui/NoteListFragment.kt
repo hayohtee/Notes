@@ -57,11 +57,11 @@ class NoteListFragment : Fragment() {
             }
         }
 
-
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.notes.collect { values ->
-                    adapter.submitList(values)
+                viewModel.notes.collect { notes ->
+                    adapter.submitList(notes)
+                    toggleDefaultView(notes.isEmpty())
                 }
             }
         }
@@ -89,6 +89,17 @@ class NoteListFragment : Fragment() {
         val navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.topAppBar.setupWithNavController(navController, appBarConfiguration)
+    }
+
+    private fun toggleDefaultView(isNotesEmpty: Boolean) {
+        val visibility = if (isNotesEmpty) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+
+        binding.defaultImageView.visibility = visibility
+        binding.defaultTextView.visibility = visibility
     }
 
     override fun onDestroyView() {
